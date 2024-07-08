@@ -4,7 +4,8 @@
              xmlns:drawable="clr-namespace:FastFlightObserver"
              x:Class="FastFlightObserver.MainPage">
     <ContentPage.Resources>
-        <drawable:GraphicsDrawable x:Key="drawable" />
+        <drawable:GraphicsDraw x:Name="drawable"
+                               x:Key="drawable" />
     </ContentPage.Resources>
     <ScrollView>
         <Grid>
@@ -13,9 +14,16 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
 
-            <GraphicsView Drawable="{StaticResource drawable}"
+            <GraphicsView x:Name="graphics_view"
+                          Drawable="{StaticResource drawable}"
                           HeightRequest="300"
                           WidthRequest="400"/>
+
+            <VerticalStackLayout>
+                <Button Text="Draw Elipse"
+                        Clicked="OnClick"/>
+            </VerticalStackLayout>
+            
         </Grid>
     </ScrollView>
 </ContentPage>

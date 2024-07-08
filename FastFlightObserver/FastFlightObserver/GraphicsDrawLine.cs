@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace FastFlightObserver
 {
-    public class GraphicsDrawable : IDrawable
+    public class GraphicsDraw : IDrawable
     {
+        public int time { get; set; } = 0;
+
+        public 
+
         public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             canvas.StrokeColor = Colors.Red;
             canvas.StrokeSize = 6;
-            canvas.DrawLine(10, 10, 90, 100);
+            canvas.DrawLine(100 + time, 100, 200 + time, 100);
+            
         }
     }
-    
 }

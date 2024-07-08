@@ -2,8 +2,6 @@
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
-
 	public MainPage()
 	{
 		InitializeComponent();
@@ -11,7 +9,8 @@ public partial class MainPage : ContentPage
 
 	private void OnClick(object sender, EventArgs e)
 	{
-		
-	}
+		drawable.time += 20;
+		graphics_view.Invalidate();
+    }
 }
 
