@@ -10,7 +10,7 @@ namespace FastFlightObserver
     {
         public double X;
         public double Y;
-        public int Frame;
-        public double R;
+        public double T;
+        public double F;
     }
 }

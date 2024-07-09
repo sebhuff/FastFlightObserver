@@ -14,8 +14,6 @@ namespace FastFlightObserver
             
         }
 
-        public int time { get; set; } = 0;
-
         public ICollection<ScreenPoint> Screen_Points { get; set; }
         public ScreenAndObserver ScreenAndObserver { get; set; }
         public void Draw(ICanvas canvas, RectF dirtyRect)
