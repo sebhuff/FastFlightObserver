@@ -19,7 +19,7 @@
                           HeightRequest="400"
                           WidthRequest="800"/>
 
-            <VerticalStackLayout>
+            <VerticalStackLayout Grid.Row="1">
                 <Button Text="Draw Elipse"
                         Clicked="OnClick"/>
             </VerticalStackLayout>

@@ -11,7 +11,7 @@ public partial class MainPage : ContentPage
         Screen_Height = 0.1
     };
 
-    int Video_Length = 5;                                       // seconds
+    int Video_Length = 10;                                       // seconds
     int Frame_Rate = 50;                                        // Frames per second
 
     double Start_Time = 0;
@@ -22,27 +22,27 @@ public partial class MainPage : ContentPage
         InitializeComponent();
 
         PofT p1 = new PofT();
-        p1.GetX = (double time) => -20 + (time / 4);
-        p1.GetY = (double time) => Math.Sin(time/4);
-        p1.GetZ = (double time) => 200;
+        p1.GetX = (double time) => 10 * Math.Sin(time / 20);
+        p1.GetY = (double time) => 0;
+        p1.GetZ = (double time) => 200 + 10 * Math.Cos(time / 20);
         PointCollection.Points.Add(p1);
 
         PofT p2 = new PofT();
-        p2.GetX = (double time) => -22 + (time / 4);
-        p2.GetY = (double time) => Math.Sin(time / 4);
-        p2.GetZ = (double time) => 200;
+        p2.GetX = (double time) => 30 * Math.Sin(time / 20);
+        p2.GetY = (double time) => 0;
+        p2.GetZ = (double time) => 200 + 30 * Math.Cos(time / 20);
         PointCollection.Points.Add(p2);
 
         PofT p3 = new PofT();
-        p3.GetX = (double time) => -20 + (time / 4);
-        p3.GetY = (double time) => 2 + Math.Sin(time / 4);
-        p3.GetZ = (double time) => 200;
+        p3.GetX = (double time) => 20 * Math.Sin(time / 20);
+        p3.GetY = (double time) => 10;
+        p3.GetZ = (double time) => 200 + 20 * Math.Cos(time / 20);
         PointCollection.Points.Add(p3);
 
         PofT p4 = new PofT();
-        p4.GetX = (double time) => -22 + (time / 4);
-        p4.GetY = (double time) => 2 + Math.Sin(time / 4);
-        p4.GetZ = (double time) => 200;
+        p4.GetX = (double time) => 20 * Math.Sin(time / 20);
+        p4.GetY = (double time) => -10;
+        p4.GetZ = (double time) => 200 + 20 * Math.Cos(time / 20);
         PointCollection.Points.Add(p4);
     }
 
@@ -75,7 +75,7 @@ public partial class MainPage : ContentPage
         gd.Screen_Points = PointCollection.GenerateScreenPointsInfiniteC(time, ScreenAndObserver.Observer_Distance_From_Screen);
 
         graphics_view.Invalidate();
-        
+
         if (Frame >= (Video_Length * Frame_Rate))
         {
             Timer.Elapsed -= Timer_Elapsed;
