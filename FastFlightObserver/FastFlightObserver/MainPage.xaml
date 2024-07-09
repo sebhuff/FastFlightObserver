@@ -16,8 +16,8 @@
 
             <GraphicsView x:Name="graphics_view"
                           Drawable="{StaticResource drawable}"
-                          HeightRequest="300"
-                          WidthRequest="400"/>
+                          HeightRequest="400"
+                          WidthRequest="800"/>
 
             <VerticalStackLayout>
                 <Button Text="Draw Elipse"

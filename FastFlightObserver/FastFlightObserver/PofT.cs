@@ -8,9 +8,9 @@ namespace FastFlightObserver
 {
     public class PofT
     {
-        public delegate double GetX(double t);
-        public delegate double GetY(double t);
-        public delegate double GetZ(double t);
+        public Func<double, double> GetX;
+        public Func<double, double> GetY;
+        public Func<double, double> GetZ;
         public double Frequency = 550 * 10^12;
     }
 }
