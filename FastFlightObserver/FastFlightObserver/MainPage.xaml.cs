@@ -5,6 +5,17 @@ namespace FastFlightObserver;
 
 public partial class MainPage : ContentPage
 {
+    private double observer_distance_from_screen { get; set; }
+    public double Observer_Distance_From_Screen
+    {
+        get => observer_distance_from_screen;
+        set
+        {
+            observer_distance_from_screen = value;
+            OnPropertyChanged(nameof(Observer_Distance_From_Screen));            
+        }
+    }
+
     ScreenAndObserver ScreenAndObserver = new ScreenAndObserver()
     {
         Observer_Distance_From_Screen = 0.2,
@@ -25,8 +36,8 @@ public partial class MainPage : ContentPage
         double distance = 100000;
         double orbit_rad = 40000;
 
-        double orbit_speed = 1000;
-        double spin_speed = 10000;
+        double orbit_speed = 3000;
+        double spin_speed = 30000;
 
         PofT p1 = new PofT();
         p1.GetX = (double time) => orbit_rad * Math.Sin(time * orbit_speed) + rad * Math.Sin(time * spin_speed);

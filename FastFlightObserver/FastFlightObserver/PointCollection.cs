@@ -69,11 +69,18 @@ namespace FastFlightObserver
 
                         double f = p.Frequency;
 
-                        //if(time > 0)
-                        //{
-                        //    f = 
-                        //}
-                        //old_r = r;
+                        if (time > 0)
+                        {
+                            double v = (old_r - r) / run_step;
+
+                            if(v > c)
+      +                     {
+
+                            }
+                            // v is positive means r is reducing... so object coming towards us - frequency increases
+                            f = p.Frequency * (1 - (v / c));
+                        }
+                        old_r = r;
 
                         screen_points.Add(new ScreenPoint() { X = xsd, Y = ysd, F = f, T = T });
                     }

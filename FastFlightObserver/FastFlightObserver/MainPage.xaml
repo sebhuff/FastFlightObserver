@@ -29,6 +29,8 @@
             <VerticalStackLayout Grid.Row="2">
                 <Button Text="Draw Elipse"
                         Clicked="OnClick"/>
+                <Entry Text="{x:Binding Observer_Distance_From_Screen}"/>
+
             </VerticalStackLayout>
             
         </Grid>

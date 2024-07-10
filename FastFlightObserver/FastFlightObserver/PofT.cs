@@ -11,6 +11,6 @@ namespace FastFlightObserver
         public Func<double, double> GetX;
         public Func<double, double> GetY;
         public Func<double, double> GetZ;
-        public double Frequency = 550 * 10^12;
+        public double Frequency = 550 * (10^12);
     }
 }
